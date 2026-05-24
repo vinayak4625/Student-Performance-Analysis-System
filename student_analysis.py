@@ -33,11 +33,11 @@ df = pd.DataFrame(data)
 
 # Creating a realistic target variable (Final_Score) with random noise
 df['Final_Score'] = (
-    (df['Hours_Studied'] * 2.5) + 
-    (df['Attendance_Rate'] * 0.3) + 
-    (df['Previous_Scores'] * 0.4) + 
-    np.where(df['Extracurriculars'] == 'Yes', 3, 0) + 
-    (df['Sleep_Hours'] * 1.5) + 
+    (df['Hours_Studied'] * 2.5) +
+    (df['Attendance_Rate'] * 0.3) +
+    (df['Previous_Scores'] * 0.4) +
+    np.where(df['Extracurriculars'] == 'Yes', 3, 0) +
+    (df['Sleep_Hours'] * 1.5) +
     np.random.normal(0, 4, n_students) # Random noise
 )
 
@@ -45,7 +45,7 @@ df['Final_Score'] = (
 df['Final_Score'] = np.clip(df['Final_Score'], 0, 100)
 
 print("\n--- First 5 Rows of the Dataset ---")
-display(df.head())
+print(df.head())
 
 # ==========================================
 # 3. EXPLORATORY DATA ANALYSIS (EDA)
